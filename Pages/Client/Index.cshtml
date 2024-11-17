@@ -18,7 +18,23 @@
 
 </tr>
 </thead>
-
+<tbody>
+@foreach(var item in Model.ListClients)
+{
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Email</td>
+                    <td>@item.Phone</td>
+                    <td>@item.Address</td>
+                    <td><a class="btn btn-secondary btn-sm" href="/Client/CreateAd/@item.Id">Create Ad</a></td>
+                    <td>
+                        <a class="btn btn-warning btn-sm" href="/Client/Edit?.Id=@item.Id">Edit</a>
+                        <a class="btn btn-danger btn-sm" href="/Client/Delete?.Id=@item.Id" onclick="return confirm('Are you sure you want to delete this client?');">Delete</a>
+                    </td>
+                </tr>
+}
+</tbody>
 
 </table>
 }
