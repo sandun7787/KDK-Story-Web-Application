@@ -6,6 +6,16 @@
 <br />
 <h2>New Clients</h2>
 
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+	<div class="alert alert-danger">@Model.ErrorMessage</div>
+}
+
+@if (!string.IsNullOrEmpty(Model.SuccessMessage))
+{
+	<div class="alert alert-success">@Model.SuccessMessage</div>
+}
+
 <form method="post">
 	<div class="row mb-3">
 		<label class="col col-from-label">Name</label>
